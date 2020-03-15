@@ -10,4 +10,4 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: 'Here are the issues'' first issue'
-        pr-message: 'hanks for the PR!!!'' first pr'
+        pr-message: 'Thanks for the PR!!!'' first pr'
