@@ -1538,8 +1538,10 @@ space](https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapt
 # 3.1 Comments and Docstrings
 
 Comments are used to explain the code. The interpreter doesn’t execute
-the comments. There are 3 types of comments in Python: \* Single Line \*
-In-Line \* Multi Line
+the comments. There are 3 types of comments in Python: 
+* Single Line 
+* In-Line 
+* Multi Line
 
 ## Single Line
 
@@ -1633,7 +1635,9 @@ single-line comments as docstrings 🙂
 ## Docstrings for documentation of code.
 
 [PEP-257](https://www.python.org/dev/peps/pep-0257/) defines two types
-of docstrings. \* One-Line docstring \* Multi-Line docstring
+of docstrings. 
+* One-Line docstring 
+* Multi-Line docstring
 
 ### [One-Line docstring](https://www.python.org/dev/peps/pep-0257/#one-line-docstrings)
 
