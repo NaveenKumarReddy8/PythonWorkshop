@@ -17,6 +17,8 @@ this.
 1.  Open the cmd or terminal and execute **python –version**
 2.  Using Python’s builtin sys module
 
+<!-- end list -->
+
 ``` python
 import sys
 
@@ -40,17 +42,17 @@ pretty easy.
 
 We have a big list of data types that come as builtins in Python.
 
--   None
--   bytes
--   int
--   bool
--   float
--   complex
--   string
--   tuple
--   list
--   set
--   dict
+  - None
+  - bytes
+  - int
+  - bool
+  - float
+  - complex
+  - string
+  - tuple
+  - list
+  - set
+  - dict
 
 Apart from the above prominent data types, we have a few other data
 types like namedtuple, frozensets, etc..
@@ -65,6 +67,8 @@ Few things to know before getting into the examples:😉
     used `f` inside the print function which is used to format the
     strings as `{}`, these are known as f-strings.
 2.  `type` function is used to find the type of the object or datatype.
+
+<!-- end list -->
 
 ``` python
 # None
@@ -170,7 +174,8 @@ that **With great power comes great responsibility** 🕷
 To help the developers with this, from Python 3.6 we have [Type
 Hints(PEP-484)](https://www.python.org/dev/peps/pep-0484/).
 
-We will get through these in the coming chapters. Stay tuned 😇
+We will get through these in the coming chapters. Stay tuned
+😇
 
 # 1.3 Python Keywords and allowed Variable names
 
@@ -231,14 +236,14 @@ print(*keyword.kwlist, sep="\n")
 
 TLDR:
 
--   Variable names shouldn’t be same as that of built-in keywords.
--   Variable name shouldn’t start with a number or with a symbol(except
+  - Variable names shouldn’t be same as that of built-in keywords.
+  - Variable name shouldn’t start with a number or with a symbol(except
     "\_", protected and private attributes are created using underscore,
     🤔 it’s better to say it as name mangling rather than protected or
     private. That’s for a different notebook session 😀).
 
-PS: Don’t give a try naming the variable that starts with #, it would be
-a Python’s comment, which would be neglected by the interpreter 😅.
+PS: Don’t give a try naming the variable that starts with \#, it would
+be a Python’s comment, which would be neglected by the interpreter 😅.
 
 ### Allowed Variable names
 
@@ -300,7 +305,7 @@ use a specific data type and it’s functionality.😊
 We have various built-in data types that come out of the box 😎.
 
 | Data type  | Mutable? |
-|:-----------|:---------|
+| ---------- | -------- |
 | None       | ❌        |
 | bytes      | ❌        |
 | bool       | ❌        |
@@ -333,12 +338,12 @@ it would be returning `None`
 import os
 
 # let's set a env variable first
-new_environment_variable_name: str = input("Enter the variable name:\t")
-new_environment_variable_value: str = input("Enter the variable's value:\t")
+new_environment_variable_name: str = input("Enter the variable name: \n>>>")
+new_environment_variable_value: str = input("Enter the variable's value: \n>>>")
 os.environ[new_environment_variable_name] = new_environment_variable_value
 
 # Now let's try to fetch a envrionment's variable value
-env_variable_name: str = input("Enter the variable name to be searched:\t")
+env_variable_name: str = input("Enter the variable name to be searched: \n>>>")
 value = os.getenv(env_variable_name)
 if value is None:
     print(f"There is no environment variable named {env_variable_name}")
@@ -348,11 +353,14 @@ else:
     )
 ```
 
-    Enter the variable name:     Language
-    Enter the variable's value:  Python
-    Enter the variable name to be searched:  Golang
-
-
+    Enter the variable name: 
+    >>> Language
+    Enter the variable's value: 
+    >>> Python
+    Enter the variable name to be searched: 
+    >>> Golang
+    
+    
     There is no environment variable named Golang
 
 ### **bytes**
@@ -378,8 +386,9 @@ actually they are ASCII values, for the convenience of the developer, we
 see them as human readable strings.
 
 But how to see the actual representation of bytes object? 🤔 It’s pretty
-simple 😉! We can typecast the bytes object to a list and we see each
-character as it’s respective ASCII value.
+simple 😉\! We can typecast the bytes object to a list and we see each
+character as it’s respective ASCII
+    value.
 
 ``` python
 print(list(bytes_obj))
@@ -412,15 +421,17 @@ int objects are any mathematical Integers. pretty easy right 😎
 ``` python
 # Integer values can be used for any integer arithmetics.
 # A few simple operations are addition, subtraction, multiplication, division etc..
-operand_1 = int(input("Enter an integer value: "))
-operand_2 = int(input("Enter an integer value: "))
+operand_1 = int(input("Enter an integer value: \n>>>"))
+operand_2 = int(input("Enter an integer value: \n>>>"))
 print(operand_1 + operand_2)
 ```
 
-    Enter an integer value:  3
-    Enter an integer value:  5
-
-
+    Enter an integer value: 
+    >>> 3
+    Enter an integer value: 
+    >>> 5
+    
+    
     8
 
 ### **float**
@@ -431,15 +442,17 @@ float objects are any rational numbers.
 # Like integer objects float objects are used for decimal arithmetics
 # A few simple operations are addition, subtraction, multiplication, division etc..
 # We are typcasting integer or float value to float values explicitly.
-operand_1 = float(input("Enter the integer/float value: "))
-operand_2 = float(input("Enter the integer/float value: "))
+operand_1 = float(input("Enter the integer/float value: \n>>>"))
+operand_2 = float(input("Enter the integer/float value: \n>>>"))
 print(operand_1 + operand_2)
 ```
 
-    Enter the integer/float value:  1.3
-    Enter the integer/float value:  2.5
-
-
+    Enter the integer/float value: 
+    >>> 1.3
+    Enter the integer/float value: 
+    >>> 2.5
+    
+    
     3.8
 
 ### **complex**
@@ -491,7 +504,8 @@ Once the tuple object is created, the tuple can’t be modified, although
 if the objects in the tuple are mutable, they can be changed 😊
 
 The objects in the tuple are ordered, So the objects in the tuple can be
-accessed by using its index ranging from 0 to (number of elements - 1).
+accessed by using its index ranging from 0 to (number of elements -
+1).
 
 ``` python
 # tuples are best suited for having data which doesn't change in it's lifetime.
@@ -560,7 +574,7 @@ print(set_obj)
 # But when printed, we see that only 6 are present because set doesn't allow same objects repeated.
 ```
 
-    {'Golang', 3, 4, 'Python', 6, 10}
+    {3, 4, 6, 'Python', 'Golang', 10}
 
 ### **dict**
 
@@ -696,7 +710,7 @@ except IndexError as exc:
     👻 Ouch! we got into IndexError exception: list index out of range
 
 The question I have is, how do I get the 2nd element from the last 🤔?
-Should I find the length of the list and access the \<length - 2>? Yup,
+Should I find the length of the list and access the \<length - 2\>? Yup,
 it works 😉.
 
 But we have one good way to do it by negative index, example: `-2`
@@ -779,7 +793,9 @@ except ValueError as exc:
     print(f"Caught ValueError: {exc}")
 ```
 
-    5
+``` 
+5
+```
 
 `pop`
 
@@ -808,14 +824,15 @@ Defining an set is pretty similar to a list or tuple, it is enclosed in
 
 PS 🔔: If we need to have a empty set, `{}` won’t create a set, it
 creates a empty dictionary instead. So we need to create a empty set by
-using `set()`
+using
+`set()`
 
 ``` python
 anime = {"Dragon ball", "One Piece", "Death Note", "Full Metal Alchemist", "Naruto"}
 print(anime)
 ```
 
-    {'One Piece', 'Dragon ball', 'Naruto', 'Death Note', 'Full Metal Alchemist'}
+    {'Full Metal Alchemist', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
 
 `add`
 
@@ -824,7 +841,7 @@ anime.add("Tokyo Ghoul")
 print(anime)
 ```
 
-    {'Tokyo Ghoul', 'One Piece', 'Dragon ball', 'Naruto', 'Death Note', 'Full Metal Alchemist'}
+    {'Full Metal Alchemist', 'Tokyo Ghoul', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
 
 `remove`
 
@@ -841,7 +858,7 @@ except KeyError as exc:
     )
 ```
 
-    {'One Piece', 'Dragon ball', 'Naruto', 'Death Note', 'Full Metal Alchemist'}
+    {'Full Metal Alchemist', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
 
 ## Dictionary
 
@@ -921,8 +938,9 @@ PS 🔔: Are dictionaries ordered collection🤔?
 From Python 3.7 dictionaries follow insertion order 😎
 
 In python versions older than 3.7, the insertion of items is not
-ordered🙄. No problem 🙃, we still have OrderedDict(present in collections
-module) `from collections import OrderedDict` which does the same 😉
+ordered🙄. No problem 🙃, we still have OrderedDict(present in
+collections module) `from collections import OrderedDict` which does the
+same 😉
 
 # 1.6 IDEs/Editors for Python
 
@@ -934,7 +952,8 @@ IDLE gets installed automatically on Windows along with Python
 installation. On Mac or \*nix operating systems we need install it
 manually
 
-A few great IDEs/Editors for Python
+A few great IDEs/Editors for
+Python
 
 ## PyCharm
 
@@ -959,7 +978,8 @@ A few great IDEs/Editors for Python
 ## Google Colab
 
 This is my Personal Favourite when I need huge memory and GPU. We get
-those for free here 😎
+those for free here
+😎
 
 <a href="https://colab.research.google.com" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/GoogleColab_logo.png?raw=true" width=100 length=100></img></a>
 
@@ -981,14 +1001,15 @@ Python 2.x’s `input` evaluates the string as a python command, like
 `eval(input())`.
 
 ``` python
-user_entered = input("Hey Pythonist! Please enter anything")
+user_entered = input("Hey Pythonist! Please enter anything: \n>>>")
 print(user_entered)
 ```
 
-    Hey Pythonist! Please enter anything Hey Pythoneer ♥️
-
-
-    Hey Pythoneer ♥️
+    Hey Pythonist! Please enter anything: 
+    >>> Hello Python ♥️
+    
+    
+    Hello Python ♥️
 
 Let’s try typecasting to integers we got from the user.
 
@@ -997,8 +1018,8 @@ If the input is not a valid integer value, typecasting to integer raises
 
 ``` python
 try:
-    variable_1 = input("Enter variable 1 to be added")  # string
-    variable_2 = input("Enter variable 2 to be added")  # string
+    variable_1 = input("Enter variable 1 to be added: \n>>>")  # string
+    variable_2 = input("Enter variable 2 to be added \n>>>")  # string
     integer_1 = int(variable_1)  # Typecasting to integer
     integer_2 = int(variable_2)  # Typecasting to integer
     print(f"sum of {variable_1} and {variable_2} = {integer_1+integer_2}")
@@ -1006,11 +1027,13 @@ except ValueError as exc:
     print(f"👻 unable to typecast to integer: {exc}")
 ```
 
-    Enter variable 1 to be added 5
-    Enter variable 2 to be added I am not an integer 😜
-
-
-    👻 unable to typecast to integer: invalid literal for int() with base 10: 'I am not an integer 😜'
+    Enter variable 1 to be added: 
+    >>> I am not an Integer 😜
+    Enter variable 2 to be added 
+    >>> I am also not an Integer 😜
+    
+    
+    👻 unable to typecast to integer: invalid literal for int() with base 10: 'I am not an Integer 😜'
 
 # 1.8 Builtins
 
@@ -1308,8 +1331,8 @@ print(f"The repr of now is: {repr(now)}")
 print(f"The str of now is: {str(now)}")
 ```
 
-    The repr of now is: datetime.datetime(2021, 6, 3, 12, 28, 45, 925202)
-    The str of now is: 2021-06-03 12:28:45.925202
+    The repr of now is: datetime.datetime(2021, 6, 3, 13, 24, 55, 748821)
+    The str of now is: 2021-06-03 13:24:55.748821
 
 ``` python
 class ProgrammingLanguage:
@@ -1322,10 +1345,11 @@ print(f"The repr of language_obj is: {repr(language_obj)}")
 print(f"The str of language_obj is: {str(language_obj)}")
 ```
 
-    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f7f780fe430>
-    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f7f780fe430>
+    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f627804a820>
+    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f627804a820>
 
-In the above example we see that output to be something like:
+In the above example we see that output to be something
+like:
 
 ``` sh
 The repr of language_obj is: <__main__.Language object at 0x7f1580c67190>
@@ -1357,7 +1381,7 @@ print(f"The repr of human_obj is: {repr(human_obj)}")
 print(f"The str of human_obj is: {str(human_obj)}")
 ```
 
-    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f7f780ef3d0
+    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f6278055370
     The str of human_obj is: I am IronMan of age 48
 
 We see that the result representations of the `human_obj` have been
@@ -1437,6 +1461,7 @@ help(os)
 *`snipped output:`*
 
 ``` shell
+
 Help on module os:
 
 NAME
@@ -1458,7 +1483,7 @@ help(os.getcwd)
 ```
 
     Help on built-in function getcwd in module posix:
-
+    
     getcwd()
         Return a unicode string representing the current working directory.
 
