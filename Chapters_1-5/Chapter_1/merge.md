@@ -1,7 +1,6 @@
-1.1 Getting Started with Python 🐍
-=================================
+# 1.1 Getting Started with Python 🐍
 
-It's pretty easy to start with Python Language 🐍. We would be using
+It’s pretty easy to start with Python Language 🐍. We would be using
 Python \>= 3.9 in this
 [Repository](https://github.com/NaveenKumarReddy8/PythonWorkshop) as of
 now 🙂
@@ -15,10 +14,10 @@ now 🙂
 Lets check the version of Python we are using. We have 2 ways to know
 this.
 
-1.  Open the cmd or terminal and execute **python --version**
-2.  Using Python's builtin sys module
+1.  Open the cmd or terminal and execute **python –version**
+2.  Using Python’s builtin sys module
 
-``` {.python}
+``` python
 import sys
 
 print(sys.version)
@@ -27,16 +26,15 @@ print(sys.version)
     3.9.5 (default, May 12 2021, 15:26:36) 
     [GCC 8.3.0]
 
-1.2 Creating variables and assigning values
-===========================================
+# 1.2 Creating variables and assigning values
 
 Python is a Dynamically typed language. It means based on the value we
 assign to a variable, it sets the datatype to it.
 
-Now the question is "How do we assign a value to a variable?🤔". It's
+Now the question is “How do we assign a value to a variable?🤔”. It’s
 pretty easy.
 
-``` {.python}
+``` python
 <variable_name> = <value>
 ```
 
@@ -57,7 +55,7 @@ We have a big list of data types that come as builtins in Python.
 Apart from the above prominent data types, we have a few other data
 types like namedtuple, frozensets, etc..
 
-Let's create examples for the above data types, will be little bored in
+Let’s create examples for the above data types, will be little bored in
 just seeing the examples. We would be covering in depth about these data
 types in upcoming chapters :)
 
@@ -68,7 +66,7 @@ Few things to know before getting into the examples:😉
     strings as `{}`, these are known as f-strings.
 2.  `type` function is used to find the type of the object or datatype.
 
-``` {.python}
+``` python
 # None
 none_datatype = None
 print(f"The type of none_datatype is {type(none_datatype)}")
@@ -76,7 +74,7 @@ print(f"The type of none_datatype is {type(none_datatype)}")
 
     The type of none_datatype is <class 'NoneType'>
 
-``` {.python}
+``` python
 # int
 int_datatype = 13
 print(f"The type of int_datatype is {type(int_datatype)}")
@@ -84,7 +82,7 @@ print(f"The type of int_datatype is {type(int_datatype)}")
 
     The type of int_datatype is <class 'int'>
 
-``` {.python}
+``` python
 # bytes
 bytes_datatype = b"Hello Python!"
 print(f"The type of bytes_datatype is {type(bytes_datatype)}")
@@ -92,7 +90,7 @@ print(f"The type of bytes_datatype is {type(bytes_datatype)}")
 
     The type of bytes_datatype is <class 'bytes'>
 
-``` {.python}
+``` python
 # bool
 # bool datatype can only have either True or False. Integer value of True is 1 and False is 0.
 bool_datatype = True
@@ -101,7 +99,7 @@ print(f"The type of bool_datatype is {type(bool_datatype)}")
 
     The type of bool_datatype is <class 'bool'>
 
-``` {.python}
+``` python
 # float
 float_datatype = 3.14
 print(f"The type of float_datatype is {type(float_datatype)}")
@@ -109,7 +107,7 @@ print(f"The type of float_datatype is {type(float_datatype)}")
 
     The type of float_datatype is <class 'float'>
 
-``` {.python}
+``` python
 # complex
 complex_datatype = 13 + 5j
 print(f"The type of complex_datatype is {type(complex_datatype)}")
@@ -117,7 +115,7 @@ print(f"The type of complex_datatype is {type(complex_datatype)}")
 
     The type of complex_datatype is <class 'complex'>
 
-``` {.python}
+``` python
 # str
 str_datatype = "Hey! Welcome to Python."
 print(f"The type of str_datatype is {type(str_datatype)}")
@@ -125,7 +123,7 @@ print(f"The type of str_datatype is {type(str_datatype)}")
 
     The type of str_datatype is <class 'str'>
 
-``` {.python}
+``` python
 # tuple
 tuple_datatype = (None, 13, True, 3.14, "Hey! Welcome to Python.")
 print(f"The type of tuple_datatype is {type(tuple_datatype)}")
@@ -133,7 +131,7 @@ print(f"The type of tuple_datatype is {type(tuple_datatype)}")
 
     The type of tuple_datatype is <class 'tuple'>
 
-``` {.python}
+``` python
 # list
 list_datatype = [None, 13, True, 3.14, "Hey! Welcome to Python."]
 print(f"The type of list_datatype is {type(list_datatype)}")
@@ -141,7 +139,7 @@ print(f"The type of list_datatype is {type(list_datatype)}")
 
     The type of list_datatype is <class 'list'>
 
-``` {.python}
+``` python
 # set
 set_datatype = {None, 13, True, 3.14, "Hey! Welcome to Python."}
 print(f"The type of set_datatype is {type(set_datatype)}")
@@ -149,7 +147,7 @@ print(f"The type of set_datatype is {type(set_datatype)}")
 
     The type of set_datatype is <class 'set'>
 
-``` {.python}
+``` python
 # dict
 dict_datatype = {
     "language": "Python",
@@ -161,13 +159,12 @@ print(f"The type of dict_datatype is {type(dict_datatype)}")
 
     The type of dict_datatype is <class 'dict'>
 
-Tidbits
-=======
+# Tidbits
 
 The thing which I Love and Hate the most about Python is the dynamic
 typing. We might not know what are the types of parameters we might pass
 to a function or method. If you pass any other type of object as a
-parameter, **boom** you might see Exceptions raised 👻. Let's remember
+parameter, **boom** you might see Exceptions raised 👻. Let’s remember
 that **With great power comes great responsibility** 🕷
 
 To help the developers with this, from Python 3.6 we have [Type
@@ -175,22 +172,21 @@ Hints(PEP-484)](https://www.python.org/dev/peps/pep-0484/).
 
 We will get through these in the coming chapters. Stay tuned 😇
 
-1.3 Python Keywords and allowed Variable names
-==============================================
+# 1.3 Python Keywords and allowed Variable names
 
-``` {.python}
+``` python
 # To retrieve the python keyword list, we can use the keyword built-in package.
 import keyword
 ```
 
-Let's print the keywords present.
+Let’s print the keywords present.
 
-keyword.kwlist returns python's keywords in a list datatype.
+keyword.kwlist returns python’s keywords in a list datatype.
 
 We are using \*(starred) expression to print the values returned by
-keyword.kwlist each separated by "\n"(newline).
+keyword.kwlist each separated by “”(newline).
 
-``` {.python}
+``` python
 print(*keyword.kwlist, sep="\n")
 ```
 
@@ -231,23 +227,22 @@ print(*keyword.kwlist, sep="\n")
     with
     yield
 
-Variable Names
-==============
+# Variable Names
 
 TLDR:
 
--   Variable names shouldn't be same as that of built-in keywords.
--   Variable name shouldn't start with a number or with a symbol(except
-    \"\_\", protected and private attributes are created using
-    underscore, 🤔 it's better to say it as name mangling rather than
-    protected or private. That's for a different notebook session 😀).
+-   Variable names shouldn’t be same as that of built-in keywords.
+-   Variable name shouldn’t start with a number or with a symbol(except
+    "\_", protected and private attributes are created using underscore,
+    🤔 it’s better to say it as name mangling rather than protected or
+    private. That’s for a different notebook session 😀).
 
-PS: Don't give a try naming the variable that starts with \#, it would
-be a Python's comment, which would be neglected by the interpreter 😅.
+PS: Don’t give a try naming the variable that starts with #, it would be
+a Python’s comment, which would be neglected by the interpreter 😅.
 
 ### Allowed Variable names
 
-``` {.python}
+``` python
 x = True
 _x = False
 x_y = "Hey Python geek!"
@@ -262,13 +257,13 @@ print(f"x is equal to X:{x==X}")
 ### Invalid Variable names
 
 We will be using `exec` within `try`-`except` to catch the syntax error.
-🤔 But why? Syntax errors can't be catched, well it shouldn't for good 😉.
+🤔 But why? Syntax errors can’t be catched, well it shouldn’t for good 😉.
 so we are using `exec` to execute the code.
 
 `exec` takes the string argument and interprets the string as a python
 code.
 
-``` {.python}
+``` python
 # variable name starting with number.
 code_string = "9x=True"
 try:
@@ -279,7 +274,7 @@ except SyntaxError as exc:
 
     Ouch! In the exception: invalid syntax (<string>, line 1)
 
-``` {.python}
+``` python
 # variable name starting with a symbol(other than underscore"_").
 code_string = "$g = 10"
 try:
@@ -290,8 +285,7 @@ except SyntaxError as exc:
 
     Ouch! In the exception: invalid syntax (<string>, line 1)
 
-1.4 Data types
-==============
+# 1.4 Data types
 
 `Kiddo explanation 😇:`
 
@@ -301,25 +295,25 @@ and each of them have a specific role or usage.
 
 Likewise, we need various data types like string, boolean, integer,
 dictionary etc.. for the development of a code. We need to know where to
-use a specific data type and it's functionality.😊
+use a specific data type and it’s functionality.😊
 
 We have various built-in data types that come out of the box 😎.
 
-  Data type    Mutable?
-  ------------ ----------
-  None         ❌
-  bytes        ❌
-  bool         ❌
-  int          ❌
-  float        ❌
-  complex      ❌
-  str          ❌
-  tuple        ❌
-  list         ✅
-  set          ✅
-  dictionary   ✅
+| Data type  | Mutable? |
+|:-----------|:---------|
+| None       | ❌        |
+| bytes      | ❌        |
+| bool       | ❌        |
+| int        | ❌        |
+| float      | ❌        |
+| complex    | ❌        |
+| str        | ❌        |
+| tuple      | ❌        |
+| list       | ✅        |
+| set        | ✅        |
+| dictionary | ✅        |
 
-The First question we would be interested in is "What is Mutable?🤔". If
+The First question we would be interested in is “What is Mutable?🤔”. If
 a object can be altered after its creation, then it is Mutable, else
 Immutable.
 
@@ -329,13 +323,13 @@ None is a singleton object, which represents empty or null.
 
 #### *Example of None usage*:
 
-In this example, Let's try getting the environment variables 😉
+In this example, Let’s try getting the environment variables 😉
 
-We would be using the `os` module's `getenv` method to fetch the
-environment variable's value, if there isn't that environment variable,
+We would be using the `os` module’s `getenv` method to fetch the
+environment variable’s value, if there isn’t that environment variable,
 it would be returning `None`
 
-``` {.python}
+``` python
 import os
 
 # let's set a env variable first
@@ -372,7 +366,7 @@ encoding.
 
 bytes objects can be created by prefixing `b` before the string.
 
-``` {.python}
+``` python
 bytes_obj: bytes = b"Hello Python Enthusiast!"
 print(bytes_obj)
 ```
@@ -383,11 +377,11 @@ We see that they are visually the same as string when printed. But
 actually they are ASCII values, for the convenience of the developer, we
 see them as human readable strings.
 
-But how to see the actual representation of bytes object? 🤔 It's pretty
+But how to see the actual representation of bytes object? 🤔 It’s pretty
 simple 😉! We can typecast the bytes object to a list and we see each
-character as it's respective ASCII value.
+character as it’s respective ASCII value.
 
-``` {.python}
+``` python
 print(list(bytes_obj))
 ```
 
@@ -398,7 +392,7 @@ print(list(bytes_obj))
 bool objects have only two values: `True`✅ and `False`❌, integer
 equivalent of True is 1 and for False is 0
 
-``` {.python}
+``` python
 do_we_love_python = True
 if do_we_love_python:
     print("🐍 Python too loves and takes care of you ❤️")
@@ -415,7 +409,7 @@ for `False`
 
 int objects are any mathematical Integers. pretty easy right 😎
 
-``` {.python}
+``` python
 # Integer values can be used for any integer arithmetics.
 # A few simple operations are addition, subtraction, multiplication, division etc..
 operand_1 = int(input("Enter an integer value: "))
@@ -433,7 +427,7 @@ print(operand_1 + operand_2)
 
 float objects are any rational numbers.
 
-``` {.python}
+``` python
 # Like integer objects float objects are used for decimal arithmetics
 # A few simple operations are addition, subtraction, multiplication, division etc..
 # We are typcasting integer or float value to float values explicitly.
@@ -450,13 +444,13 @@ print(operand_1 + operand_2)
 
 ### **complex**
 
-complex objects aren't so complex to understand 😉
+complex objects aren’t so complex to understand 😉
 
 complex objects hold a Real number and an imaginary number. While
 creating the complex object, we would be having a `j` beside the
 imaginary number.
 
-``` {.python}
+``` python
 operand_1 = 10 + 5j
 operand_2 = 3 + 4j
 print(operand_1 * operand_2)
@@ -466,7 +460,7 @@ print(operand_1 * operand_2)
 
 explanation for the above math: 😉
 
-``` {.math}
+``` math
 (3+4j)*(10+5j)
 3(10+5j) + 4j(10+5j)
 30 + 15j + 40j + 20(j*j)
@@ -480,7 +474,7 @@ explanation for the above math: 😉
 
 string objects hold an sequence of characters.
 
-``` {.python}
+``` python
 my_string = "🐍 Python is cool"
 print(my_string)
 ```
@@ -493,13 +487,13 @@ tuple object is an immutable datatype which can have any datatype
 objects inside it and is created by enclosing paranthesis `()` and
 objects are separated by a comma.
 
-Once the tuple object is created, the tuple can't be modified, although
+Once the tuple object is created, the tuple can’t be modified, although
 if the objects in the tuple are mutable, they can be changed 😊
 
 The objects in the tuple are ordered, So the objects in the tuple can be
 accessed by using its index ranging from 0 to (number of elements - 1).
 
-``` {.python}
+``` python
 # tuples are best suited for having data which doesn't change in it's lifetime.
 
 apple_and_its_colour = ("apple", "red")
@@ -526,7 +520,7 @@ list objects are similar to tuple, the differences are the list object
 is mutable, so we can add or remove objects in the list even after its
 creation. It is created by using `[]`.
 
-``` {.python}
+``` python
 about_python = [
     "interpreted",
     "object-oriented",
@@ -554,12 +548,12 @@ objects. Mathematical set theory operations can be applied using set
 datatype objects. 😊 it is created by using `{}`.
 
 PS: `{}` denotes a dictionary, we need to use `set()` for creating an
-empty set, there won't be this issue when creating set objects
+empty set, there won’t be this issue when creating set objects
 containing objects, for example: `{1,"a"}`
 
 set objects are good for having the mathematical set operations.
 
-``` {.python}
+``` python
 set_obj = {6, 4, 4, 3, 10, "Python", "Python", "Golang"}
 # We see that we have created a set with 8 objects.
 print(set_obj)
@@ -578,7 +572,7 @@ which raises a KeyError when no given key is found. The other way to
 fetch is by using `<dict_obj>.get(key)` which returns `None` by default
 if no key is found.
 
-``` {.python}
+``` python
 dict_datatype = {
     "language": "Python",
     "Inventor": "Guido Van Rossum",
@@ -594,8 +588,7 @@ print(f"The result is: {result}")
     The programming language is: Python
     The result is: None
 
-1.5 Collection Types
-====================
+# 1.5 Collection Types
 
 We have many collection types in Python, `str`, `int` objects hold only
 value, but coming to collection types, we can have various objects
@@ -604,8 +597,7 @@ stored in the collections.
 The Collection Types we have in Python are: \* Tuple \* List \* Set \*
 Dictionary
 
-Tuple
------
+## Tuple
 
 A Tuple is a ordered collection of objects and it is of fixed length and
 immutable, so the values in the tuple can not be changed nor added or
@@ -617,14 +609,14 @@ represented with paranthesis `()`
 
 Example:
 
-``` {.python}
+``` python
 ip_address_port = ("127.0.0.1", 8080)
 ```
 
 A tuple with a single member needs to have a trailing comma, else the
 type of the variable would be the datatype of the member itself.
 
-``` {.python}
+``` python
 # Proper way to create a single member tuple.
 single_member_tuple = ("one",)
 print(type(single_member_tuple))
@@ -635,7 +627,7 @@ print(type(single_member_tuple))
     <class 'tuple'>
     <class 'tuple'>
 
-``` {.python}
+``` python
 # Improper way trying to create a single member tuple.
 single_member_tuple = "one"
 print(type(single_member_tuple))
@@ -643,44 +635,43 @@ print(type(single_member_tuple))
 
     <class 'str'>
 
-List
-----
+## List
 
 List collection types are similar to tuples, the only difference would
-be that new objects can be created, removed or object's data can be
+be that new objects can be created, removed or object’s data can be
 modified 😉.
 
-``` {.python}
+``` python
 int_list = [1, 2, 3]
 string_list = ["abc", "defghi"]
 ```
 
-``` {.python}
+``` python
 # A list can be empty:
 empty_list = []
 ```
 
 objects in the list are not restricted to be of a particular datatype.
-let's see an example 👇.
+let’s see an example 👇.
 
-``` {.python}
+``` python
 mixed_list = [1, "abc", True, 3.14, None]
 ```
 
 list can contain lists as objects too. These are called nested lists.
 
-``` {.python}
+``` python
 nested_list = [[1, 2, 3], ["a", "b", "c"]]
 ```
 
 The objects present in the list can be accessed by the index it is
 placed. The index starts from 0 👻.
 
-``` {.python}
+``` python
 my_list = ["Iron man", "Thor", "Wonder Woman", "Wolverine", "Naruto"]
 ```
 
-``` {.python}
+``` python
 print(my_list[0])
 print(my_list[1])
 ```
@@ -689,13 +680,13 @@ print(my_list[1])
     Thor
 
 In the `my_list`, we have 5 strings in the list, but in the below
-example, let's give a try to get the 100th index element which is not
+example, let’s give a try to get the 100th index element which is not
 present in the `my_list` 🙄.
 
 As there is no 100th element, we would be seeing an `IndexError`
 exception.
 
-``` {.python}
+``` python
 try:
     print(my_list[100])
 except IndexError as exc:
@@ -705,12 +696,12 @@ except IndexError as exc:
     👻 Ouch! we got into IndexError exception: list index out of range
 
 The question I have is, how do I get the 2nd element from the last 🤔?
-Should I find the length of the list and access the \<length - 2\>? Yup,
+Should I find the length of the list and access the \<length - 2>? Yup,
 it works 😉.
 
 But we have one good way to do it by negative index, example: `-2`
 
-``` {.python}
+``` python
 # Access the 2nd element from the last.
 print(my_list[-2])
 ```
@@ -721,7 +712,7 @@ print(my_list[-2])
 
 `append`
 
-``` {.python}
+``` python
 # Append a new item to the list.
 # We use append method of the list.
 my_list.append("Zoro")
@@ -732,7 +723,7 @@ print(my_list)
 
 `remove`
 
-``` {.python}
+``` python
 # Remove the item present in the list.
 # We use remove method of the list.
 # If there's no object that we are trying to remove in the list, then ValueError would be raised.
@@ -747,7 +738,7 @@ except ValueError as exc:
 
 `insert`
 
-``` {.python}
+``` python
 # Insert a object at a particular index.
 # We use insert method of the list.
 my_list.insert(1, "Super Man")
@@ -758,7 +749,7 @@ print(my_list)
 
 `reverse`
 
-``` {.python}
+``` python
 # Reverse the objects in the list.
 # we use reverse method of the list.
 my_list.reverse()
@@ -778,7 +769,7 @@ print(my_list[::-1])
 
 `index`
 
-``` {.python}
+``` python
 # Index of an object in the list.
 # we use index method of the list.
 # raises a ValueError, if no given object is found in the list.
@@ -792,7 +783,7 @@ except ValueError as exc:
 
 `pop`
 
-``` {.python}
+``` python
 # Pop is used to remove and return the element present at the last in the list(index=-1) by default.
 # When index argument is passed, it would remove and return the element at that index.
 # raises IndexError when no object is present at the given Index.
@@ -807,8 +798,7 @@ except IndexError as exc:
 
     Naruto
 
-set
----
+## set
 
 A set is collection of unique items, the items does not follow insertion
 order.
@@ -816,11 +806,11 @@ order.
 Defining an set is pretty similar to a list or tuple, it is enclosed in
 `{}`
 
-PS 🔔: If we need to have a empty set, `{}` won't create a set, it
+PS 🔔: If we need to have a empty set, `{}` won’t create a set, it
 creates a empty dictionary instead. So we need to create a empty set by
 using `set()`
 
-``` {.python}
+``` python
 anime = {"Dragon ball", "One Piece", "Death Note", "Full Metal Alchemist", "Naruto"}
 print(anime)
 ```
@@ -829,7 +819,7 @@ print(anime)
 
 `add`
 
-``` {.python}
+``` python
 anime.add("Tokyo Ghoul")
 print(anime)
 ```
@@ -841,7 +831,7 @@ print(anime)
 remove method of set can be used to remove a particular object from the
 set, if the object is not present, KeyError would be raised.
 
-``` {.python}
+``` python
 try:
     anime.remove("Tokyo Ghoul")
     print(anime)
@@ -853,8 +843,7 @@ except KeyError as exc:
 
     {'One Piece', 'Dragon ball', 'Naruto', 'Death Note', 'Full Metal Alchemist'}
 
-Dictionary
-----------
+## Dictionary
 
 As in few other languages, we have hashmaps, Dictionaries in python are
 similar. It has unique Key - Value pairs.
@@ -862,7 +851,7 @@ similar. It has unique Key - Value pairs.
 The Key and Value can be of any object. Each Key-Value pair is separated
 by a `,`
 
-``` {.python}
+``` python
 anime_protagonist = {
     "Dragon Ball": "Goku",
     "One Piece": "Luffy",
@@ -876,9 +865,9 @@ print(anime_protagonist)
     {'Dragon Ball': 'Goku', 'One Piece': 'Luffy', 'Death Note': 'Yagami Light', 'Full Metal Alchemist': 'Edward Elric', 'Naruto': 'Naruto'}
 
 We can access the values of the dictionary by `<dictionary>[<key>]`. If
-there's no `<key>` in the dictionary, we would be seeing an KeyError 🔑❌
+there’s no `<key>` in the dictionary, we would be seeing an KeyError 🔑❌
 
-``` {.python}
+``` python
 try:
     print(anime_protagonist["Dragon Ball"])
 except KeyError as exc:
@@ -891,7 +880,7 @@ except KeyError as exc:
 
 Iterate over keys, values and both in the dictionary 🐇
 
-``` {.python}
+``` python
 # Keys
 print("===Keys===")
 for my_key in anime_protagonist.keys():
@@ -935,8 +924,7 @@ In python versions older than 3.7, the insertion of items is not
 ordered🙄. No problem 🙃, we still have OrderedDict(present in collections
 module) `from collections import OrderedDict` which does the same 😉
 
-1.6 IDEs/Editors for Python
-===========================
+# 1.6 IDEs/Editors for Python
 
 We have a lot of IDEs/Editors available for Python. Although we get
 **IDLE** abrevated as **I**ntegrated **D**evelopment and **L**earning
@@ -948,33 +936,27 @@ manually
 
 A few great IDEs/Editors for Python
 
-PyCharm
--------
+## PyCharm
 
 <a href="https://www.jetbrains.com/pycharm/" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/PyCharm_logo.png?raw=true" width=100 length=100></img></a>
 
-Spyder
-------
+## Spyder
 
 <a href="https://www.spyder-ide.org/" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/Spyder_logo.png?raw=true" width=100 length=100></img></a>
 
-Visual Studio Code
-------------------
+## Visual Studio Code
 
 <a href="https://code.visualstudio.com/" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/VisualStudio_logo.png?raw=true" width=100 length=100></img></a>
 
-Atom
-----
+## Atom
 
 <a href="https://atom.io/" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/Atom_logo.png?raw=true" width=100 length=100></img></a>
 
-Jupyter
--------
+## Jupyter
 
 <a href="https://jupyter.org/" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/Jupyter_logo.png?raw=true" width=100 length=100></img></a>
 
-Google Colab
-------------
+## Google Colab
 
 This is my Personal Favourite when I need huge memory and GPU. We get
 those for free here 😎
@@ -985,8 +967,7 @@ PS 😉: I always say to prefer using basic text editor like notepad/gedit
 when learning a new language and use a good IDE if your Boss wants you
 to do the work quick 😜
 
-1.7 User Input
-==============
+# 1.7 User Input
 
 `input` is a builtin function in Python, which prompts for the user to
 enter as standard input upto newline(`\n`).
@@ -994,12 +975,12 @@ enter as standard input upto newline(`\n`).
 `input` function always returns a string datatype, we need to typecast
 to respective datatype required.
 
-Python 2.x's `input` is different from Python 3.x's `input`.
+Python 2.x’s `input` is different from Python 3.x’s `input`.
 
-Python 2.x's `input` evaluates the string as a python command, like
+Python 2.x’s `input` evaluates the string as a python command, like
 `eval(input())`.
 
-``` {.python}
+``` python
 user_entered = input("Hey Pythonist! Please enter anything")
 print(user_entered)
 ```
@@ -1009,12 +990,12 @@ print(user_entered)
 
     Hey Pythoneer ♥️
 
-Let's try typecasting to integers we got from the user.
+Let’s try typecasting to integers we got from the user.
 
 If the input is not a valid integer value, typecasting to integer raises
 `ValueError`
 
-``` {.python}
+``` python
 try:
     variable_1 = input("Enter variable 1 to be added")  # string
     variable_2 = input("Enter variable 2 to be added")  # string
@@ -1031,10 +1012,9 @@ except ValueError as exc:
 
     👻 unable to typecast to integer: invalid literal for int() with base 10: 'I am not an integer 😜'
 
-1.8 Builtins
-============
+# 1.8 Builtins
 
-``` {.python}
+``` python
 import builtins
 ```
 
@@ -1046,7 +1026,7 @@ number and builtin attribute.
 The function we are usign to traverse in `dir(builtins)` and get index
 and builtin attribute is `enumerate` which is also a bulitin 😉
 
-``` {.python}
+``` python
 for index, builtin_attribute in enumerate(dir(builtins)):
     print(f"{index}) {builtin_attribute}")
 ```
@@ -1205,14 +1185,13 @@ for index, builtin_attribute in enumerate(dir(builtins)):
     151) vars
     152) zip
 
-There's a difference between **Keywords** and **Builtins** 🤔. We can't
+There’s a difference between **Keywords** and **Builtins** 🤔. We can’t
 assign a new object to the Keywords, if we try to do, we would be seeing
 an exception raised 🔴. But coming to builtins, we can assign any object
-to the builtin names, and Python won't have any issues, but it's not a
+to the builtin names, and Python won’t have any issues, but it’s not a
 good practice to do so 😇
 
-1.9 Module
-==========
+# 1.9 Module
 
 A module is a importable python file and can be created by creating a
 file with extension as `.py`
@@ -1224,7 +1203,7 @@ module (greet.py)
 
 `greet.py`
 
-``` {.python}
+``` python
 """Module to greet the user"""
 
 import getpass
@@ -1239,20 +1218,20 @@ if __name__ == "__main__":
     hello()
 ```
 
-``` {.python}
+``` python
 from greet import hello
 ```
 
-``` {.python}
+``` python
 hello()
 ```
 
     Hello Root. Have a great day :)
 
-let's have a look at the greet.py module. Well, we see the below `if`
+let’s have a look at the greet.py module. Well, we see the below `if`
 condition.
 
-``` {.python}
+``` python
 if __name__ == "__main__":
     hello()
 ```
@@ -1260,20 +1239,20 @@ if __name__ == "__main__":
 But why do we we need to have it🤔? We can just call the `hello` function
 at the end as
 
-``` {.python}
+``` python
 hello()
 ```
 
-Let's see the below👇 code to know why we use the first approach rather
+Let’s see the below👇 code to know why we use the first approach rather
 than the second.🙃
 
-``` {.python}
+``` python
 import greet
 ```
 
-🔍 The above code doesn't greet you 😢
+🔍 The above code doesn’t greet you 😢
 
-``` {.python}
+``` python
 %run ./greet.py
 ```
 
@@ -1287,16 +1266,15 @@ Ipython shell.
 
 Coming to second snippet, we are executing the `greet.py` directly.
 
-Value of `__name__` would be "\_\_main\_\_" if we are executing a Python
+Value of `__name__` would be “\_\_main\_\_” if we are executing a Python
 module directly. If we import a module(using the module indirectly) then
 value of `__name__` would be the relative path of the imported module.
 In the first example the `__name__` in the greet module would be
-"greet". As the "greet" is not equal to "\_\_main\_\_", that's the
+“greet”. As the “greet” is not equal to “\_\_main\_\_”, that’s the
 reason, we never went to the `if` condition when we imported greet
 module. 🙂
 
-1.10 String representations of objects: str() vs repr()
-=======================================================
+# 1.10 String representations of objects: str() vs repr()
 
 `str()` and `repr()` are builtin functions used to represent the object
 in the form of string.
@@ -1317,11 +1295,11 @@ class `object`. `object` class has the methods `__str__`, `__repr__` and
 a lot more (which can be deepdived in someother notebook 😉). Hence every
 class would be having `__str__` and `__repr__` implicitly 😊
 
-Python's official documentations states that `__str__` should be used to
+Python’s official documentations states that `__str__` should be used to
 represent a object which is human readable(informal), whereas `__repr__`
 is used for official representation of an object.
 
-``` {.python}
+``` python
 from datetime import datetime
 
 now = datetime.now()
@@ -1333,7 +1311,7 @@ print(f"The str of now is: {str(now)}")
     The repr of now is: datetime.datetime(2021, 6, 3, 12, 28, 45, 925202)
     The str of now is: 2021-06-03 12:28:45.925202
 
-``` {.python}
+``` python
 class ProgrammingLanguage:
     def __init__(self, language: str):
         self.language = language
@@ -1349,17 +1327,17 @@ print(f"The str of language_obj is: {str(language_obj)}")
 
 In the above example we see that output to be something like:
 
-``` {.sh}
+``` sh
 The repr of language_obj is: <__main__.Language object at 0x7f1580c67190>
 The str of language_obj is: <__main__.Language object at 0x7f1580c67190>
 ```
 
 The address of the object might be different for everyone
 
-Now let's try to override the `__str__` and `__repr__` methods and see
+Now let’s try to override the `__str__` and `__repr__` methods and see
 how the representations work
 
-``` {.python}
+``` python
 class Human:
     def __init__(self, name: str, age: int):
         self.name = name
@@ -1385,84 +1363,80 @@ print(f"The str of human_obj is: {str(human_obj)}")
 We see that the result representations of the `human_obj` have been
 changed as we have overridden the `__str__` and `__repr__` methods 😊
 
-1.11 Installing packages
-========================
+# 1.11 Installing packages
 
 Python has one of the largest programming community who build 3rd party
 packages and support community help ❤️.
 
-That's pretty good, Now, how do we install the packages 🤔? We could use
-Python's package manager **PIP**.
+That’s pretty good, Now, how do we install the packages 🤔? We could use
+Python’s package manager **PIP**.
 
-Python's official 3rd party package repository is [Python Package Index
+Python’s official 3rd party package repository is [Python Package Index
 (PyPI)](https://pypi.org/) and its index url is https://pypi.org/simple
 
-Here's how to use PIP in shell/terminal:
+Here’s how to use PIP in shell/terminal:
 
 To search for a package:
 
-``` {.shell}
+``` shell
 pip search [package name]
 ```
 
 To install a package: Install
 
-``` {.shell}
+``` shell
     pip install [package name]
 ```
 
 Install a specific version
 
-``` {.shell}
+``` shell
     pip install [package name]==[version]
 ```
 
 Install greater than a specific version
 
-``` {.shell}
+``` shell
     pip install [package name]>=[verion]
 ```
 
 To uninstall a package
 
-``` {.shell}
+``` shell
 pip uninstall [package name]
 ```
 
-Tidbits 🔔
----------
+## Tidbits 🔔
 
 There are modern ways of managing the dependencies using
 [poetry](https://python-poetry.org/),
 [flit](https://flit.readthedocs.io/en/latest/index.html) etc.. We will
-get to those soon...😊
+get to those soon…😊
 
-1.12 Help Utility
-=================
+# 1.12 Help Utility
 
 Python has a builtin help utility which helps to know about the
 keywords, builtin functions, modules.
 
-``` {.python}
+``` python
 help()
 ```
 
 You can pass keyword, bulitin function or Module to help function to
 know about the same.
 
-``` {.python}
+``` python
 import os
 ```
 
-``` {.python}
+``` python
 # Help utility on the builtin module 'sys'
 help(os)
 ```
 
 *`snipped output:`*
 
-``` {.shell}
-
+``` shell
 Help on module os:
 
 NAME
@@ -1478,7 +1452,7 @@ MODULE REFERENCE
     location listed above.
 ```
 
-``` {.python}
+``` python
 # Help utility on getcwd function of sys module
 help(os.getcwd)
 ```
