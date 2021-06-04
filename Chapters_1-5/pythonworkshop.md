@@ -1535,7 +1535,7 @@ would be tricky to resolve it as it is invisible.
 ![Get Error for extra
 space](https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_2/resources/funny_get_errors_for_extra_space.jpg?raw=true)
 
-# Comments and Docstrings
+# 3.1 Comments and Docstrings
 
 Comments are used to explain the code. The interpreter doesn’t execute
 the comments. There are 3 types of comments in Python: \* Single Line \*

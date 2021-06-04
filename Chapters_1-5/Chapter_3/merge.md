@@ -1,4 +1,4 @@
-# Comments and Docstrings
+# 3.1 Comments and Docstrings
 
 Comments are used to explain the code. The interpreter doesn't execute the comments. There are 3 types of comments in Python:
 * Single Line
