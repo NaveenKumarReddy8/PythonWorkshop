@@ -2,8 +2,8 @@ name: DockerHub Push
 
 on:
   push:
-    branches:
-      - 'master'
+    tags:
+      - '*.*.*'
 
 jobs:
   docker:
