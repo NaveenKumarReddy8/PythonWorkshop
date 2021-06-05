@@ -1,6 +1,10 @@
 FROM python:3.9
 
-LABEL maintainer="Naveen Kumar Reddy Pemmana <mr.naveen8@gmail.com>"
+LABEL maintainer = "Naveen Kumar Reddy Pemmana <mr.naveen8@gmail.com>"
+
+# Install pandoc.
+RUN apt-get update
+RUN apt-get install pandoc -y
 
 WORKDIR /pythonworkshop
 COPY pyproject.toml poetry.lock /pythonworkshop/
