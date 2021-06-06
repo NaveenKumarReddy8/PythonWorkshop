@@ -6,7 +6,9 @@ Python \>= 3.9 in this
 now 🙂
 
 1.  [Download Python](https://www.python.org/)
-2.  Build a Docker image by using the Dockerfile present in our
+2.  Pull the docker image
+    [naveen8/pythonworkshop](https://hub.docker.com/r/naveen8/pythonworkshop)
+    or build a Docker image by using the Dockerfile present in our
     [Repository](https://github.com/NaveenKumarReddy8/PythonWorkshop)
     and run the container out of it which comes bundled with everything
     to run the code present in our repository 🚀.
@@ -163,13 +165,13 @@ print(f"The type of dict_datatype is {type(dict_datatype)}")
 
     The type of dict_datatype is <class 'dict'>
 
-# Tidbits
+## Tidbits
 
-The thing which I Love and Hate the most about Python is the dynamic
-typing. We might not know what are the types of parameters we might pass
+The thing which I Love the most about Python is the dynamic typing, Due
+to this we might not know what are the types of parameters we might pass
 to a function or method. If you pass any other type of object as a
-parameter, **boom** you might see Exceptions raised 👻. Let’s remember
-that **With great power comes great responsibility** 🕷
+parameter, **boom** you might see Exceptions raised during the runtime👻.
+Let’s remember that **With great power comes great responsibility** 🕷
 
 To help the developers with this, from Python 3.6 we have [Type
 Hints(PEP-484)](https://www.python.org/dev/peps/pep-0484/).
@@ -232,7 +234,7 @@ print(*keyword.kwlist, sep="\n")
     with
     yield
 
-# Variable Names
+## Variable Names
 
 TLDR:
 
@@ -448,12 +450,12 @@ print(operand_1 + operand_2)
 ```
 
     Enter the integer/float value: 
-    >>> 1.3
+    >>> 1.2
     Enter the integer/float value: 
-    >>> 2.5
+    >>> 2.3
     
     
-    3.8
+    3.5
 
 ### **complex**
 
@@ -574,7 +576,7 @@ print(set_obj)
 # But when printed, we see that only 6 are present because set doesn't allow same objects repeated.
 ```
 
-    {3, 4, 6, 'Python', 'Golang', 10}
+    {'Golang', 3, 4, 6, 'Python', 10}
 
 ### **dict**
 
@@ -814,7 +816,7 @@ except IndexError as exc:
 
     Naruto
 
-## set
+## Set
 
 A set is collection of unique items, the items does not follow insertion
 order.
@@ -832,7 +834,7 @@ anime = {"Dragon ball", "One Piece", "Death Note", "Full Metal Alchemist", "Naru
 print(anime)
 ```
 
-    {'Full Metal Alchemist', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
+    {'Dragon ball', 'Full Metal Alchemist', 'One Piece', 'Naruto', 'Death Note'}
 
 `add`
 
@@ -841,7 +843,7 @@ anime.add("Tokyo Ghoul")
 print(anime)
 ```
 
-    {'Full Metal Alchemist', 'Tokyo Ghoul', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
+    {'Dragon ball', 'Full Metal Alchemist', 'One Piece', 'Tokyo Ghoul', 'Naruto', 'Death Note'}
 
 `remove`
 
@@ -858,7 +860,7 @@ except KeyError as exc:
     )
 ```
 
-    {'Full Metal Alchemist', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
+    {'Dragon ball', 'Full Metal Alchemist', 'One Piece', 'Naruto', 'Death Note'}
 
 ## Dictionary
 
@@ -1006,10 +1008,10 @@ print(user_entered)
 ```
 
     Hey Pythonist! Please enter anything: 
-    >>> Hello Python ♥️
+    >>> Hello Python 🐍
     
     
-    Hello Python ♥️
+    Hello Python 🐍
 
 Let’s try typecasting to integers we got from the user.
 
@@ -1030,7 +1032,7 @@ except ValueError as exc:
     Enter variable 1 to be added: 
     >>> I am not an Integer 😜
     Enter variable 2 to be added 
-    >>> I am also not an Integer 😜
+    >>> I am not an Integer as well 😜
     
     
     👻 unable to typecast to integer: invalid literal for int() with base 10: 'I am not an Integer 😜'
@@ -1331,8 +1333,8 @@ print(f"The repr of now is: {repr(now)}")
 print(f"The str of now is: {str(now)}")
 ```
 
-    The repr of now is: datetime.datetime(2021, 6, 3, 13, 24, 55, 748821)
-    The str of now is: 2021-06-03 13:24:55.748821
+    The repr of now is: datetime.datetime(2021, 6, 5, 13, 46, 46, 486658)
+    The str of now is: 2021-06-05 13:46:46.486658
 
 ``` python
 class ProgrammingLanguage:
@@ -1345,8 +1347,8 @@ print(f"The repr of language_obj is: {repr(language_obj)}")
 print(f"The str of language_obj is: {str(language_obj)}")
 ```
 
-    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f627804a820>
-    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f627804a820>
+    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f4b94748fa0>
+    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f4b94748fa0>
 
 In the above example we see that output to be something
 like:
@@ -1381,7 +1383,7 @@ print(f"The repr of human_obj is: {repr(human_obj)}")
 print(f"The str of human_obj is: {str(human_obj)}")
 ```
 
-    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f6278055370
+    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f4b94739c40
     The str of human_obj is: I am IronMan of age 48
 
 We see that the result representations of the `human_obj` have been
