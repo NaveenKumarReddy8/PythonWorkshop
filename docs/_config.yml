@@ -1,7 +1,3 @@
-title: Python Workshop
-email: mr.naveen8@gmail.com
-description: Hello Pythoneer! Want to learn Python 🐍 with having fun? You have come to the right place ♥️
-github_username:  NaveenKumarReddy8
-
-
 theme: jekyll-theme-cayman
+
+paginate: 5
