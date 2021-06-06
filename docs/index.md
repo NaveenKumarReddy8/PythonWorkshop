@@ -1333,8 +1333,8 @@ print(f"The repr of now is: {repr(now)}")
 print(f"The str of now is: {str(now)}")
 ```
 
-    The repr of now is: datetime.datetime(2021, 6, 5, 13, 46, 46, 486658)
-    The str of now is: 2021-06-05 13:46:46.486658
+    The repr of now is: datetime.datetime(2021, 6, 6, 4, 11, 4, 520866)
+    The str of now is: 2021-06-06 04:11:04.520866
 
 ``` python
 class ProgrammingLanguage:
@@ -1347,18 +1347,11 @@ print(f"The repr of language_obj is: {repr(language_obj)}")
 print(f"The str of language_obj is: {str(language_obj)}")
 ```
 
-    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f4b94748fa0>
-    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f4b94748fa0>
+    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f080861d9d0>
+    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f080861d9d0>
 
-In the above example we see that output to be something
-like:
-
-``` sh
-The repr of language_obj is: <__main__.Language object at 0x7f1580c67190>
-The str of language_obj is: <__main__.Language object at 0x7f1580c67190>
-```
-
-The address of the object might be different for everyone
+In the above example we see that default repr output. The address of the
+object might be different for everyone.
 
 Now let’s try to override the `__str__` and `__repr__` methods and see
 how the representations work
@@ -1383,7 +1376,7 @@ print(f"The repr of human_obj is: {repr(human_obj)}")
 print(f"The str of human_obj is: {str(human_obj)}")
 ```
 
-    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f4b94739c40
+    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f08085da040
     The str of human_obj is: I am IronMan of age 48
 
 We see that the result representations of the `human_obj` have been
