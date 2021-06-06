@@ -6,7 +6,9 @@ Python \>= 3.9 in this
 now 🙂
 
 1.  [Download Python](https://www.python.org/)
-2.  Build a Docker image by using the Dockerfile present in our
+2.  Pull the docker image
+    [naveen8/pythonworkshop](https://hub.docker.com/r/naveen8/pythonworkshop)
+    or build a Docker image by using the Dockerfile present in our
     [Repository](https://github.com/NaveenKumarReddy8/PythonWorkshop)
     and run the container out of it which comes bundled with everything
     to run the code present in our repository 🚀.
@@ -42,17 +44,17 @@ pretty easy.
 
 We have a big list of data types that come as builtins in Python.
 
--   None
--   bytes
--   int
--   bool
--   float
--   complex
--   string
--   tuple
--   list
--   set
--   dict
+  - None
+  - bytes
+  - int
+  - bool
+  - float
+  - complex
+  - string
+  - tuple
+  - list
+  - set
+  - dict
 
 Apart from the above prominent data types, we have a few other data
 types like namedtuple, frozensets, etc..
@@ -163,18 +165,19 @@ print(f"The type of dict_datatype is {type(dict_datatype)}")
 
     The type of dict_datatype is <class 'dict'>
 
-# Tidbits
+## Tidbits
 
-The thing which I Love and Hate the most about Python is the dynamic
-typing. We might not know what are the types of parameters we might pass
+The thing which I Love the most about Python is the dynamic typing, Due
+to this we might not know what are the types of parameters we might pass
 to a function or method. If you pass any other type of object as a
-parameter, **boom** you might see Exceptions raised 👻. Let’s remember
-that **With great power comes great responsibility** 🕷
+parameter, **boom** you might see Exceptions raised during the runtime👻.
+Let’s remember that **With great power comes great responsibility** 🕷
 
 To help the developers with this, from Python 3.6 we have [Type
 Hints(PEP-484)](https://www.python.org/dev/peps/pep-0484/).
 
-We will get through these in the coming chapters. Stay tuned 😇
+We will get through these in the coming chapters. Stay tuned
+😇
 
 # 1.3 Python Keywords and allowed Variable names
 
@@ -231,18 +234,18 @@ print(*keyword.kwlist, sep="\n")
     with
     yield
 
-# Variable Names
+## Variable Names
 
 TLDR:
 
--   Variable names shouldn’t be same as that of built-in keywords.
--   Variable name shouldn’t start with a number or with a symbol(except
-    “\_”, protected and private attributes are created using underscore,
-    🤔 it’s better to say it as name mangling rather than protected or
-    private. That’s for a different notebook session 😀).
+  - Variable names shouldn’t be same as that of built-in keywords.
+  - Variable name shouldn’t start with a number or with a symbol(except
+    “\_”, protected and private attributes are created using
+    underscore, 🤔 it’s better to say it as name mangling rather than
+    protected or private. That’s for a different notebook session 😀).
 
-PS: Don’t give a try naming the variable that starts with #, it would be
-a Python’s comment, which would be neglected by the interpreter 😅.
+PS: Don’t give a try naming the variable that starts with \#, it would
+be a Python’s comment, which would be neglected by the interpreter 😅.
 
 ### Allowed Variable names
 
@@ -304,7 +307,7 @@ use a specific data type and it’s functionality.😊
 We have various built-in data types that come out of the box 😎.
 
 | Data type  | Mutable? |
-|------------|----------|
+| ---------- | -------- |
 | None       | ❌        |
 | bytes      | ❌        |
 | bool       | ❌        |
@@ -358,8 +361,8 @@ else:
     >>> Python
     Enter the variable name to be searched: 
     >>> Golang
-
-
+    
+    
     There is no environment variable named Golang
 
 ### **bytes**
@@ -385,8 +388,9 @@ actually they are ASCII values, for the convenience of the developer, we
 see them as human readable strings.
 
 But how to see the actual representation of bytes object? 🤔 It’s pretty
-simple 😉! We can typecast the bytes object to a list and we see each
-character as it’s respective ASCII value.
+simple 😉\! We can typecast the bytes object to a list and we see each
+character as it’s respective ASCII
+    value.
 
 ``` python
 print(list(bytes_obj))
@@ -428,8 +432,8 @@ print(operand_1 + operand_2)
     >>> 3
     Enter an integer value: 
     >>> 5
-
-
+    
+    
     8
 
 ### **float**
@@ -446,12 +450,12 @@ print(operand_1 + operand_2)
 ```
 
     Enter the integer/float value: 
-    >>> 1.3
+    >>> 1.2
     Enter the integer/float value: 
-    >>> 2.5
-
-
-    3.8
+    >>> 2.3
+    
+    
+    3.5
 
 ### **complex**
 
@@ -502,7 +506,8 @@ Once the tuple object is created, the tuple can’t be modified, although
 if the objects in the tuple are mutable, they can be changed 😊
 
 The objects in the tuple are ordered, So the objects in the tuple can be
-accessed by using its index ranging from 0 to (number of elements - 1).
+accessed by using its index ranging from 0 to (number of elements -
+1).
 
 ``` python
 # tuples are best suited for having data which doesn't change in it's lifetime.
@@ -571,7 +576,7 @@ print(set_obj)
 # But when printed, we see that only 6 are present because set doesn't allow same objects repeated.
 ```
 
-    {3, 4, 6, 'Python', 'Golang', 10}
+    {'Golang', 3, 4, 6, 'Python', 10}
 
 ### **dict**
 
@@ -707,7 +712,7 @@ except IndexError as exc:
     👻 Ouch! we got into IndexError exception: list index out of range
 
 The question I have is, how do I get the 2nd element from the last 🤔?
-Should I find the length of the list and access the \<length - 2>? Yup,
+Should I find the length of the list and access the \<length - 2\>? Yup,
 it works 😉.
 
 But we have one good way to do it by negative index, example: `-2`
@@ -790,7 +795,9 @@ except ValueError as exc:
     print(f"Caught ValueError: {exc}")
 ```
 
-    5
+``` 
+5
+```
 
 `pop`
 
@@ -809,7 +816,7 @@ except IndexError as exc:
 
     Naruto
 
-## set
+## Set
 
 A set is collection of unique items, the items does not follow insertion
 order.
@@ -819,14 +826,15 @@ Defining an set is pretty similar to a list or tuple, it is enclosed in
 
 PS 🔔: If we need to have a empty set, `{}` won’t create a set, it
 creates a empty dictionary instead. So we need to create a empty set by
-using `set()`
+using
+`set()`
 
 ``` python
 anime = {"Dragon ball", "One Piece", "Death Note", "Full Metal Alchemist", "Naruto"}
 print(anime)
 ```
 
-    {'Full Metal Alchemist', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
+    {'Dragon ball', 'Full Metal Alchemist', 'One Piece', 'Naruto', 'Death Note'}
 
 `add`
 
@@ -835,7 +843,7 @@ anime.add("Tokyo Ghoul")
 print(anime)
 ```
 
-    {'Full Metal Alchemist', 'Tokyo Ghoul', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
+    {'Dragon ball', 'Full Metal Alchemist', 'One Piece', 'Tokyo Ghoul', 'Naruto', 'Death Note'}
 
 `remove`
 
@@ -852,7 +860,7 @@ except KeyError as exc:
     )
 ```
 
-    {'Full Metal Alchemist', 'Naruto', 'Dragon ball', 'One Piece', 'Death Note'}
+    {'Dragon ball', 'Full Metal Alchemist', 'One Piece', 'Naruto', 'Death Note'}
 
 ## Dictionary
 
@@ -932,8 +940,9 @@ PS 🔔: Are dictionaries ordered collection🤔?
 From Python 3.7 dictionaries follow insertion order 😎
 
 In python versions older than 3.7, the insertion of items is not
-ordered🙄. No problem 🙃, we still have OrderedDict(present in collections
-module) `from collections import OrderedDict` which does the same 😉
+ordered🙄. No problem 🙃, we still have OrderedDict(present in
+collections module) `from collections import OrderedDict` which does the
+same 😉
 
 # 1.6 IDEs/Editors for Python
 
@@ -945,7 +954,8 @@ IDLE gets installed automatically on Windows along with Python
 installation. On Mac or \*nix operating systems we need install it
 manually
 
-A few great IDEs/Editors for Python
+A few great IDEs/Editors for
+Python
 
 ## PyCharm
 
@@ -970,7 +980,8 @@ A few great IDEs/Editors for Python
 ## Google Colab
 
 This is my Personal Favourite when I need huge memory and GPU. We get
-those for free here 😎
+those for free here
+😎
 
 <a href="https://colab.research.google.com" target="_blank"><img src="https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapters_1-5/Chapter_1/resources/GoogleColab_logo.png?raw=true" width=100 length=100></img></a>
 
@@ -997,10 +1008,10 @@ print(user_entered)
 ```
 
     Hey Pythonist! Please enter anything: 
-    >>> Hello Python ♥️
-
-
-    Hello Python ♥️
+    >>> Hello Python 🐍
+    
+    
+    Hello Python 🐍
 
 Let’s try typecasting to integers we got from the user.
 
@@ -1021,9 +1032,9 @@ except ValueError as exc:
     Enter variable 1 to be added: 
     >>> I am not an Integer 😜
     Enter variable 2 to be added 
-    >>> I am also not an Integer 😜
-
-
+    >>> I am not an Integer as well 😜
+    
+    
     👻 unable to typecast to integer: invalid literal for int() with base 10: 'I am not an Integer 😜'
 
 # 1.8 Builtins
@@ -1322,8 +1333,8 @@ print(f"The repr of now is: {repr(now)}")
 print(f"The str of now is: {str(now)}")
 ```
 
-    The repr of now is: datetime.datetime(2021, 6, 3, 13, 24, 55, 748821)
-    The str of now is: 2021-06-03 13:24:55.748821
+    The repr of now is: datetime.datetime(2021, 6, 5, 13, 46, 46, 486658)
+    The str of now is: 2021-06-05 13:46:46.486658
 
 ``` python
 class ProgrammingLanguage:
@@ -1336,10 +1347,11 @@ print(f"The repr of language_obj is: {repr(language_obj)}")
 print(f"The str of language_obj is: {str(language_obj)}")
 ```
 
-    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f627804a820>
-    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f627804a820>
+    The repr of language_obj is: <__main__.ProgrammingLanguage object at 0x7f4b94748fa0>
+    The str of language_obj is: <__main__.ProgrammingLanguage object at 0x7f4b94748fa0>
 
-In the above example we see that output to be something like:
+In the above example we see that output to be something
+like:
 
 ``` sh
 The repr of language_obj is: <__main__.Language object at 0x7f1580c67190>
@@ -1371,7 +1383,7 @@ print(f"The repr of human_obj is: {repr(human_obj)}")
 print(f"The str of human_obj is: {str(human_obj)}")
 ```
 
-    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f6278055370
+    The repr of human_obj is: Human(name=IronMan, age=48) object at 0x7f4b94739c40
     The str of human_obj is: I am IronMan of age 48
 
 We see that the result representations of the `human_obj` have been
@@ -1451,6 +1463,7 @@ help(os)
 *`snipped output:`*
 
 ``` shell
+
 Help on module os:
 
 NAME
@@ -1472,7 +1485,7 @@ help(os.getcwd)
 ```
 
     Help on built-in function getcwd in module posix:
-
+    
     getcwd()
         Return a unicode string representing the current working directory.
 
@@ -1538,10 +1551,11 @@ space](https://github.com/NaveenKumarReddy8/Temporary-host-store/blob/main/Chapt
 # 3.1 Comments and Docstrings
 
 Comments are used to explain the code. The interpreter doesn’t execute
-the comments. There are 3 types of comments in Python: 
-* Single Line 
-* In-Line 
-* Multi Line
+the comments. There are 3 types of comments in Python:
+
+  - Single Line
+  - In-Line
+  - Multi Line
 
 ## Single Line
 
@@ -1578,10 +1592,9 @@ multiline comment.
 Docstrings are specific type of comments that are stored as a attribute
 to the module, class, method or function.
 
-Docstrings are written similar to the multi-line comments using
-`""" """` or `''' '''`, the only difference would be they are written
-exactly at the start(first statement) of the module, class, method or
-function.
+Docstrings are written similar to the multi-line comments using `"""
+"""` or `''' '''`, the only difference would be they are written exactly
+at the start(first statement) of the module, class, method or function.
 
 Docstrings can be programatically acccessed using the `__doc__` method
 or through the built-in function `help`. Let’s give a try 😎.
@@ -1602,7 +1615,7 @@ help(double_the_value)
 ```
 
     Help on function double_the_value in module __main__:
-
+    
     double_the_value(value: int)
         Doubles the integer value passed to the function and returns it.
 
@@ -1635,9 +1648,11 @@ single-line comments as docstrings 🙂
 ## Docstrings for documentation of code.
 
 [PEP-257](https://www.python.org/dev/peps/pep-0257/) defines two types
-of docstrings. 
-* One-Line docstring 
-* Multi-Line docstring
+of docstrings.
+
+  - One-Line docstring
+  - Multi-Line
+docstring
 
 ### [One-Line docstring](https://www.python.org/dev/peps/pep-0257/#one-line-docstrings)
 
@@ -1659,7 +1674,7 @@ methods or functions
 def multi_line_docstring(arg1: int, arg2: str) -> None:
     """
     This is a multi-line docstring.
-    
+
     Arguments:
       arg1 (int): Argument 1 is an integer.
       arg2 (str): Argument 2 is a string.
@@ -1681,12 +1696,13 @@ consistent.
 
 [Sphinx](https://www.sphinx-doc.org/en/master/) is a tool that generated
 beautiful HTML based documentation 📜 from the docstrings we provide in
-our code. reStructuredText is the default style, for other styles we
-could use plugins like
+our code. reStructuredText is the default style, for other styles like
+Google Python style, numpy we could use plugins like
 [Napoleon](https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html).
 
 Sphinx also provides various templates we can choose from to create the
-HTML documentation out of it. 😎♥️
+HTML documentation out of it.
+😎♥️
 
 ### A meme on Documentation 😂
 
