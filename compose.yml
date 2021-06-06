@@ -4,4 +4,4 @@ services:
           - 8888:8888
         volumes: 
           - ./:/pythonworkshop
-        image: pythonworkshop:latest
+        image: naveen8/pythonworkshop:latest
