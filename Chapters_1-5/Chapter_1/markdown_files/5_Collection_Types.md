@@ -3,6 +3,7 @@
 We have many collection types in Python, `str`, `int` objects hold only value, but coming to collection types, we can have various objects stored in the collections.
 
 The Collection Types we have in Python are:
+
 * Tuple
 * List 
 * Set
