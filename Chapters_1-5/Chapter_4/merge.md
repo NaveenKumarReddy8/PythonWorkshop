@@ -80,16 +80,22 @@ add(1, 3)
     The sum of 1 and 3 is 4
 
 Yup, we did got our result ⭐️. what if I forget passing a value? we
-would see a `TypeError` exception raised 👻
+would see a `TypeError` exception raised
+    👻
 
 ``` python
-try:
-    add(1)
-except TypeError as exc:
-    print(f"😈 Ouch! we are into TypeError: {exc}")
+add(1)
 ```
 
-    😈 Ouch! we are into TypeError: add() missing 1 required positional argument: 'operand_2'
+    ---------------------------------------------------------------------------
+    
+    TypeError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-2558a051bacf> in <module>
+    ----> 1 add(1)
+    
+    
+    TypeError: add() missing 1 required positional argument: 'operand_2'
 
 The name **Positional arguments** itself says the arguments should be
 according to the function signature. But here’s a deal, we can change
@@ -142,16 +148,22 @@ In the above example, we do have two arguments `greet_word` and
 `greet_word` as Positional only Argument**
 
 When we try to call our function `greet` with greet\_word as keyword
-name, Boom 💣, we get a `TypeError` exception.
+name, Boom 💣, we get a `TypeError`
+    exception.
 
 ``` python
-try:
-    greet(greet_word="Hello", name_of_the_user="Pythonist")
-except TypeError as exc:
-    print(f"We fell into TypeError: {exc}")
+greet(greet_word="Hello", name_of_the_user="Pythonist")
 ```
 
-    We fell into TypeError: greet() got some positional-only arguments passed as keyword arguments: 'greet_word'
+    ---------------------------------------------------------------------------
+    
+    TypeError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-7bd2eedf0fa4> in <module>
+    ----> 1 greet(greet_word="Hello", name_of_the_user="Pythonist")
+    
+    
+    TypeError: greet() got some positional-only arguments passed as keyword arguments: 'greet_word'
 
 Try to call our `greet` with `greet_word` as positional only argument,
 meaning not passing it by keyword name. We can hope that there won’t be
@@ -269,4 +281,114 @@ example("abc")
 Yup\! The datatype of Unnamed Positional arguments is `Tuple`, and the
 objects passed as args are placed in the tuple object. 🙂
 
+🔔 By the way, this is not our first time using Unnamed Positional
+arguments. We have already used `print` function many times and it
+accepts Unnamed Positional arguments to be printed.
+
+``` python
+print("Hello", "Pythonist!", "⭐️")
+```
+
+    Hello Pythonist! ⭐️
+
 # 4.4 Keyword-only arguments
+
+Few times being explicit is better which increases the readability of
+code. If a function signature has Keyword-only arguments, then while
+caling the function, we need to pass our objects by their keyword names.
+[PEP-3102](https://www.python.org/dev/peps/pep-3102/) defines the
+Keyword-only arguments.
+
+Well, how to define the keyword only arguments 🤔? In the previous lesson
+about Positonal Arguments we have seen that Positional-only Arguments
+whose function signature is created by using `/`. Similarly for
+Keyword-only Argument, we use `*` in the signature.
+
+``` python
+def keyword_only_argument_signature(*, arg1, arg2):
+    ...
+```
+
+`Example:`
+
+``` python
+def greet(*,greet_word, name):
+    print(f"{greet_word} {name}!")
+```
+
+Now if we want to try calling our new function `greet` as
+`greet("Hello", "Pythonist♥️")`, we should be seeing a
+    `TypeError`.
+
+``` python
+greet("Hello", "Pythonist ♥️")
+```
+
+    ---------------------------------------------------------------------------
+    
+    TypeError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-afdd481e08df> in <module>
+    ----> 1 greet("Hello", "Pythonist ♥️")
+    
+    
+    TypeError: greet() takes 0 positional arguments but 2 were given
+
+The only way we can call our `greet` function is by passing our both
+`greet_word` and `name` values with keyword names.
+
+``` python
+greet(greet_word="Hello", name="Pythonist ♥️")
+```
+
+    Hello Pythonist ♥️!
+
+# 4.5 Keyword arguments
+
+The Keyword Arguments name suggests that they are called through names
+when calling the function.
+
+As we saw Unnamed Positional arguments already, Keyword arguments are
+similar, they can be passed any number of objects, the only difference
+would be they needed to be passed with keyword names. To define the
+keyword arguments in a function signature, we need to prefix `**` for
+the argument.
+
+``` python
+def example_keyword_arguments(**kwargs):
+    print(kwargs)
+```
+
+``` python
+example_keyword_arguments(key1="value1",  key2="value2")
+```
+
+    {'key1': 'value1', 'key2': 'value2'}
+
+We can even pass a dictionary as well 😎, just that we need to pass the
+dictionary with unpacking them as `**`
+
+``` python
+my_dictionary = {"key1": "value1", "key2": "value2"}
+example_keyword_arguments(**my_dictionary)
+```
+
+    {'key1': 'value1', 'key2': 'value2'}
+
+If we try to pass objects as positional parameters, we would be seeing
+our friend `TypeError` being raised
+    👻
+
+``` python
+example_keyword_arguments("Hello")
+```
+
+    ---------------------------------------------------------------------------
+    
+    TypeError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-16d74cce31c4> in <module>
+    ----> 1 example_keyword_arguments("Hello")
+    
+    
+    TypeError: example_keyword_arguments() takes 0 positional arguments but 1 was given

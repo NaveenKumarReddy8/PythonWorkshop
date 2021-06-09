@@ -18,16 +18,22 @@ add(1, 3)
     The sum of 1 and 3 is 4
 
 Yup, we did got our result ⭐️. what if I forget passing a value? we
-would see a `TypeError` exception raised 👻
+would see a `TypeError` exception raised
+    👻
 
 ``` python
-try:
-    add(1)
-except TypeError as exc:
-    print(f"😈 Ouch! we are into TypeError: {exc}")
+add(1)
 ```
 
-    😈 Ouch! we are into TypeError: add() missing 1 required positional argument: 'operand_2'
+    ---------------------------------------------------------------------------
+    
+    TypeError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-2558a051bacf> in <module>
+    ----> 1 add(1)
+    
+    
+    TypeError: add() missing 1 required positional argument: 'operand_2'
 
 The name **Positional arguments** itself says the arguments should be
 according to the function signature. But here’s a deal, we can change
@@ -80,16 +86,22 @@ In the above example, we do have two arguments `greet_word` and
 `greet_word` as Positional only Argument**
 
 When we try to call our function `greet` with greet\_word as keyword
-name, Boom 💣, we get a `TypeError` exception.
+name, Boom 💣, we get a `TypeError`
+    exception.
 
 ``` python
-try:
-    greet(greet_word="Hello", name_of_the_user="Pythonist")
-except TypeError as exc:
-    print(f"We fell into TypeError: {exc}")
+greet(greet_word="Hello", name_of_the_user="Pythonist")
 ```
 
-    We fell into TypeError: greet() got some positional-only arguments passed as keyword arguments: 'greet_word'
+    ---------------------------------------------------------------------------
+    
+    TypeError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-7bd2eedf0fa4> in <module>
+    ----> 1 greet(greet_word="Hello", name_of_the_user="Pythonist")
+    
+    
+    TypeError: greet() got some positional-only arguments passed as keyword arguments: 'greet_word'
 
 Try to call our `greet` with `greet_word` as positional only argument,
 meaning not passing it by keyword name. We can hope that there won’t be

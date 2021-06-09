@@ -98,3 +98,13 @@ example("abc")
 
 Yup\! The datatype of Unnamed Positional arguments is `Tuple`, and the
 objects passed as args are placed in the tuple object. 🙂
+
+🔔 By the way, this is not our first time using Unnamed Positional
+arguments. We have already used `print` function many times and it
+accepts Unnamed Positional arguments to be printed.
+
+``` python
+print("Hello", "Pythonist!", "⭐️")
+```
+
+    Hello Pythonist! ⭐️
