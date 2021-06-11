@@ -50,6 +50,116 @@ This is a pretty basic function which just prints to the console saying
 “Hello Pythoneer\!😎”, as we are not returning anything using the
 `return` keyword, our function `greet` implicitly returns `None` object.
 
+We could return objects from the function using the keyword `return`
+
+``` python
+def greet():
+    return "Hello Pythoneer! 😎"
+```
+
+``` python
+greet_word = greet()
+print(greet_word)
+```
+
+    Hello Pythoneer! 😎
+
+## Functions - First Class Objecs
+
+In Python 🐍, Functions are First class objects. There are a few
+criterias defined for an object to be First class object like functions
+can be passed as argument, assigned to a variable, return a function.
+
+### Passing the function to a different function
+
+``` python
+def first_function():
+    print("One Pint of 🍺")
+```
+
+``` python
+def second_function(func):
+    func()
+    print("Two Pints of beer 🍺🍺")
+```
+
+``` python
+second_function(first_function)
+```
+
+    One Pint of 🍺
+    Two Pints of beer 🍺🍺
+
+Yippeee\! We have successfully passed our `first_function` to the
+`second_function` where `first_function` is being called inside the
+`second_function`
+
+### Assigning the function to a variable
+
+``` python
+# note that we are not calling the function, we are just assigning,
+# if we call the function, the returned value would be assigned to our variable.
+i_am_a_variable = first_function
+```
+
+``` python
+i_am_a_variable()
+```
+
+    One Pint of 🍺
+
+### Returning a function
+
+``` python
+def lets_return_a_function():
+    return first_function
+```
+
+``` python
+obj = lets_return_a_function()
+print(f"obj is {obj}")
+print(f"obj name is {obj.__name__}")
+print(f"Is obj callable? {callable(obj)}")
+```
+
+    obj is <function first_function at 0x7fcae8b7a280>
+    obj name is first_function
+    Is obj callable? True
+
+Cheers again 🍻\! We accomplished mission of returning the function. In
+the above example, we are printing the the `obj` itself which provides
+the `__str__` representation of the obj, next we are printing the name
+of the `obj` which is the function name itself, and finally we are
+checking if our `obj` is callable, if an object is callable, then
+`callable` function returns `True` else `False`
+
+### Deletion of function object
+
+As we already know that everything in Python is an object, even function
+as well is an object. We can even delete our function using the `del`
+keyword.
+
+``` python
+del first_function
+first_function()
+```
+
+    ---------------------------------------------------------------------------
+    
+    NameError                                 Traceback (most recent call last)
+    
+    <ipython-input-1-6845dce5e1f1> in <module>
+          1 del first_function
+    ----> 2 first_function()
+    
+    
+    NameError: name 'first_function' is not defined
+
+As we deleted the `first_function`, if we try to call that function, we
+do get to see `NameError` saying `first_function` is not defined.
+
+## Types of Arguments
+
 As we already know we can pass the parameters to the function, we can
 give a try on those too.. But before trying out, let’s know about the
 types of Arguments we can define in the function signature. We have the
@@ -271,7 +381,8 @@ def example(*args):
     print(f"The datatype of args is {type(args)}")
     print(f"The contents of the args are: {args}")
 
-# Calling the function. 
+
+# Calling the function.
 example("abc")
 ```
 
@@ -312,7 +423,7 @@ def keyword_only_argument_signature(*, arg1, arg2):
 `Example:`
 
 ``` python
-def greet(*,greet_word, name):
+def greet(*, greet_word, name):
     print(f"{greet_word} {name}!")
 ```
 
@@ -360,7 +471,7 @@ def example_keyword_arguments(**kwargs):
 ```
 
 ``` python
-example_keyword_arguments(key1="value1",  key2="value2")
+example_keyword_arguments(key1="value1", key2="value2")
 ```
 
     {'key1': 'value1', 'key2': 'value2'}
@@ -392,3 +503,341 @@ example_keyword_arguments("Hello")
     
     
     TypeError: example_keyword_arguments() takes 0 positional arguments but 1 was given
+
+# 4.6 Default Arguments
+
+Default arguments are the ones when calling the function, no object is
+given in its place, its default value would be considered 🔔.
+
+Default arguments are assigned in the function signature as
+
+``` python
+def func(arg=<obj>):
+```
+
+Let’s get through an example
+
+``` python
+def greet(greet_word="Hello", name="Pythonist!"):
+    print(f"{greet_word} {name}!")
+```
+
+``` python
+greet("Hey")
+```
+
+    Hey Pythonist!!
+
+We see that the output for the above example is `Hey Pythonist!`, we
+have passed just `Hey` for `greet_word` argument, as we have passed
+object for `greet_word`, it took “Hey” as its value, but coming to
+`name` argument, we haven’t passed any value to it, so it took default
+object for `name` as `Pythonist!`
+
+## Note on default arguments with respect to mutable objects
+
+In the previous example, we have made default argument values to be
+string objects, and we already know that string objects are immutable
+objects and it works really fine as we expected.
+
+But what would be result if we use mutable objects like lists,
+dictionary 🤔?
+
+``` python
+def test_mutable_objects_as_default_argument(my_list=[]):
+    my_list.append("🍰")
+    print(my_list)
+```
+
+``` python
+test_mutable_objects_as_default_argument()  # Calling the function for the first time.
+test_mutable_objects_as_default_argument()  # Calling the function for the second time.
+```
+
+    ['🍰']
+    ['🍰', '🍰']
+
+Ouch, as we are not passing any argument during calling our
+`test_mutable_objects_as_default_argument` function, both the times we
+expected the result should be the same. But, we do see that during
+second time calling of the function, there is one extra 🍰 present in the
+output.
+
+I would be happy for getting an extra cake in my plate 😋, but not in the
+above output. Well, the problem is that, `my_list` in the
+`test_mutable_objects_as_default_argument` is being stored as the
+function attribute and being persisted and mutated everytime function is
+called.
+
+We could see the default values of our function using the `__defaults__`
+method.
+
+``` python
+test_mutable_objects_as_default_argument.__defaults__
+```
+
+    (['🍰', '🍰'],)
+
+We see there are cake objects being stored in the defaults of the
+function, No worries, we do have a fix for that.
+
+`Solution:` Use `None` object as default argument.
+
+``` python
+def test_again_as_default_argument_using_none(my_list=None):
+    if my_list is None:
+        my_list = []
+    my_list.append("🍰")
+    print(my_list)
+```
+
+``` python
+test_again_as_default_argument_using_none()  # Calling the function for the first time.
+test_again_as_default_argument_using_none()  # Calling the function for the second time.
+```
+
+    ['🍰']
+    ['🍰']
+
+Hurray 🍾\! We learned how to deal with default arguments for mutable
+objects.
+
+If we pass a list containing an objects, our cake 🍰 would be appended
+and printed.
+
+``` python
+test_again_as_default_argument_using_none(["🍹"])
+```
+
+    ['🍹', '🍰']
+
+## Tidbits 💡
+
+We can’t assign default arguments to Unnamed positional arguments
+(VarArgs) and Keyword arguments as there are optional in first place
+with default values as empty tuple `()` for Unnamed positional arguments
+and empty dictionary `{}` for Keyword arguments. If we try assigning
+default argument to Unnamed positional arguments r Keyword arguments, we
+would see `SyntaxError` spawned 👻.
+
+# 4.7 TLDR regarding function arguments 💡
+
+Till now we have seen all the 4 types of arguments that we can use in
+functions.
+
+  - Positional Arguments
+  - Unnamed positional Arguments / VarArgs
+  - Keyword-only Arguments
+  - Keyword arguments / Varkwargs
+
+Let’s give it a shot with all the above arguments in a function 😎
+
+The complete syntax of a function eliding varargs and keyword arguments
+defined in [PEP-570](https://www.python.org/dev/peps/pep-0570/) would be
+as:
+
+``` python
+def name(positional_only_parameters, /, positional_or_keyword_parameters, *, keyword_only_parameters):
+```
+
+`Example:`
+
+Let’s build a complete function with all the types of arguments
+😎.
+
+``` python
+def function(positional_only, /, position="🐍", *varargs, keyword_only, **keyword):
+    print(f"{positional_only=}")
+    print(f"{position=}")
+    print(f"{varargs=}")
+    print(f"{keyword_only=}")
+    print(f"{keyword=}")
+
+    # datatype of varargs and keyword.
+    print(f"The datatype of varargs is {type(varargs)}")
+    print(f"The datatype of keyword is {type(keyword)}")
+```
+
+Let’s call our beautiful function ♥️
+
+``` python
+function(
+    "Python",
+    "♥️",
+    "Python",
+    "is",
+    "Cool",
+    keyword_only="😋",
+    key1="value1",
+    key2="value2",
+)
+```
+
+    positional_only='Python'
+    position='♥️'
+    varargs=('Python', 'is', 'Cool')
+    keyword_only='😋'
+    keyword={'key1': 'value1', 'key2': 'value2'}
+    The datatype of varargs is <class 'tuple'>
+    The datatype of keyword is <class 'dict'>
+
+The above calling of function can also be written as:
+
+``` python
+function(
+    "Python",
+    "♥️",
+    *["Python", "is", "Cool"],
+    keyword_only="😋",
+    **{"key1": "value1", "key2": "value2"},
+)  # Unpacking.
+```
+
+    positional_only='Python'
+    position='♥️'
+    varargs=('Python', 'is', 'Cool')
+    keyword_only='😋'
+    keyword={'key1': 'value1', 'key2': 'value2'}
+    The datatype of varargs is <class 'tuple'>
+    The datatype of keyword is <class 'dict'>
+
+Let’s make `position` be it’s default value.
+
+``` python
+function(
+    "Python",
+    *["Python", "is", "Cool"],
+    keyword_only="😋",
+    **{"key1": "value1", "key2": "value2"},
+)
+```
+
+    positional_only='Python'
+    position='Python'
+    varargs=('is', 'Cool')
+    keyword_only='😋'
+    keyword={'key1': 'value1', 'key2': 'value2'}
+    The datatype of varargs is <class 'tuple'>
+    The datatype of keyword is <class 'dict'>
+
+Ouch, we see that `position` has taken the `Python` as it’s value which
+we intended to be one of the value of our `varargs`. The solution for
+this is to pass our `*["Python", "is", "Cool"]` as keyword argument like
+`varargs=["Python", "is", "Cool"]`. **NOTE** that there won’t be
+unpacking symbol `*` here.
+
+``` python
+function(
+    "Python",
+    varargs=["Python", "is", "Cool"],
+    keyword_only="😋",
+    **{"key1": "value1", "key2": "value2"},
+)
+```
+
+    positional_only='Python'
+    position='🐍'
+    varargs=()
+    keyword_only='😋'
+    keyword={'varargs': ['Python', 'is', 'Cool'], 'key1': 'value1', 'key2': 'value2'}
+    The datatype of varargs is <class 'tuple'>
+    The datatype of keyword is <class 'dict'>
+
+We can even notice that in the above example, we have passed
+`varargs=["Python", "is", "Cool"]`, but in the output the datatype of
+varargs is printed as tuple. Not just in above example, in all the above
+examples, we can see that `varargs` is `tuple` and `keyword` is
+`dictionary`.
+
+💡 Unnamed Positional arguments datatype is always tuple and keyword
+argument datatype is always dictionary .
+
+# 4.8 Lambda Functions
+
+Lambda functions are inline functions which have only 1 statement. They
+are created by using the keyword `lambda` They do not have any name, so
+they are also known as Anonymous functions. Although they don’t have a
+name, they can be bound to a variable.
+
+A simple lambda function to greets us 👋:
+
+``` python
+greet = lambda: "Hello Pythonist!"
+```
+
+``` python
+print(greet())
+```
+
+    Hello Pythonist!
+
+The above lambda function can be rewritten as a regular function as:
+
+``` python
+def greet():
+    return "Hello Pythonist!"
+```
+
+``` python
+print(greet())
+```
+
+    Hello Pythonist!
+
+Conceptually, lambda functions are similar to regular functions which
+are defined using `def`, just that lambda function accepts only 1
+statement.
+
+Let’s try calling lambda function without assigning the function to any
+variable.
+
+``` python
+print((lambda: "Hello Pythonist! ♥️")())
+```
+
+    Hello Pythonist! ♥️
+
+In the above example, we are creating the lambda expression enclosed in
+paranthesis and calling the function by using `()` at the end. As there
+is no name for the lambda function we just called, this is the reason
+why Lambda expressions/functions are also called as Anonymous functions.
+
+We can pass parameters as well to the lambda function
+
+``` python
+add = lambda a, b: a + b
+print(add(3, 5))
+```
+
+``` 
+8
+```
+
+Till now, everything about `lambda functions` and `regular functions` do
+look the same, Is there any differnce? Yup, here it is, Lambda functions
+do have the Lexical closures similar to loops in regular functions. What
+the heck is Lexical closure 🤔? At the end of the lexical scope, the
+value is stil remembered unlike in the programming languages C, Golang
+etc.. Let’s try it out with an example 🙂
+
+``` python
+def do_sum(value):
+    return lambda a: a + value
+```
+
+``` python
+adder_3 = do_sum(3)
+adder_10 = do_sum(10)
+```
+
+``` python
+print(adder_3(5))
+print(adder_10(5))
+```
+
+    8
+    15
+
+Here we can see that `adder_3` and `adder_10` are persisting the values
+that `3` and `10` that we passed during calling the `do_sum` function
+which returned the lambda function which holds our 3 and 10.

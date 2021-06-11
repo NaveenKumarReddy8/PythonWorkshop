@@ -15,7 +15,7 @@ def example_keyword_arguments(**kwargs):
 ```
 
 ``` python
-example_keyword_arguments(key1="value1",  key2="value2")
+example_keyword_arguments(key1="value1", key2="value2")
 ```
 
     {'key1': 'value1', 'key2': 'value2'}

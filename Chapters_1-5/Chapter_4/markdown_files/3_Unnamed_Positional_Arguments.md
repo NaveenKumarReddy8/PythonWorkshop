@@ -89,7 +89,8 @@ def example(*args):
     print(f"The datatype of args is {type(args)}")
     print(f"The contents of the args are: {args}")
 
-# Calling the function. 
+
+# Calling the function.
 example("abc")
 ```
 

@@ -19,7 +19,7 @@ def keyword_only_argument_signature(*, arg1, arg2):
 `Example:`
 
 ``` python
-def greet(*,greet_word, name):
+def greet(*, greet_word, name):
     print(f"{greet_word} {name}!")
 ```
 
