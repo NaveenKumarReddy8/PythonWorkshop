@@ -1,3 +1,5 @@
+> :warning: **The contents of this repo moved to [PythonWorkshop](https://github.com/ProdigiousPython/PythonWorkshop) and new contents are being actively added there.**
+
 # PythonWorkshop
 Hello Pythoneer! Want to learn Python 🐍 with having fun? You have come to the right repository ♥️
 
